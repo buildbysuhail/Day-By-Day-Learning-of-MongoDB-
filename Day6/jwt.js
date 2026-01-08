@@ -1,3 +1,4 @@
+// This File is just a learning note, nothing to do with this Mini Project
 //***************** JWT tokens for auth *****************//
 // import 
 const jwt = require('jsonwebtoken'); // jsonwebtoken library
