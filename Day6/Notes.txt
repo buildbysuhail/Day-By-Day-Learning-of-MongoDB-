@@ -1,0 +1,34 @@
+JWT tokenss for Auth:
+ - JWT -> JSON Web Token
+ - a stateless Token based validation method, which stores token in client side only.
+ - it is generate in server side but
+ - it is stored in client side(eg: Local Storage) when user sends valid credentials, and then it is send to the Backend in each API call
+ - the token is send to the server side in the Header section
+ 
+ - JWT Token Structure:
+	1. Header: contains the metadata about the token
+		eg: {
+			"alg": "HS256",
+			"typ": "JWT"
+			}
+	2. Payload: include actual data(claims) of the token.
+	   > Not an Encrypted form, Eg:
+			{
+			"sub": "1234567890",
+			"name": "John Doe",
+			"iat": 1516239022
+			}
+	   > this can include non sensitive info such as user Id, Name, Role, etc. but not Password.
+	3. Signature: ensures the integrity of the token
+	   > to generate signature, the API encodes the header and payload with a secret key(know only yo the API) using a hashing algorithm
+	   
+Storing Hashed Passwords:
+ - Never store plain passwords
+ - Always store hashed passwords
+ 
+ Hashing: 
+	- One-way encryption
+	- cannot be reversed
+	- Even admins can't see passwords
+	- Tool used: bcrypt
+	
